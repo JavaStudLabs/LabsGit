@@ -6,14 +6,16 @@ import java.util.Objects;
 public class User {
     private String userName;
     private List<Catalog> userSubscribedCatalogs;
+    private int balance;
 
     public User(String userName) {
         this.userName = userName;
     }
 
-    public User(String userName, List<Catalog> userSubscribedCatalogs) {
+    public User(String userName, List<Catalog> userSubscribedCatalogs, int balance) {
         this.userName = userName;
         this.userSubscribedCatalogs = userSubscribedCatalogs;
+        this.balance = balance;
     }
 
     public String getUserName() {
@@ -30,6 +32,14 @@ public class User {
 
     public void setUserSubscribedCatalogs(List<Catalog> userSubscribedCatalogs) {
         this.userSubscribedCatalogs = userSubscribedCatalogs;
+    }
+
+    public int getBalance() {
+        return balance;
+    }
+
+    public void setBalance(int balance) {
+        this.balance = balance;
     }
 
     @Override

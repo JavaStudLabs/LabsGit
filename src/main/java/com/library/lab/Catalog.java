@@ -4,9 +4,9 @@ import java.util.Objects;
 
 public class Catalog {
     private String catalogTitle;
-    private String catalogSubscriptionPrice;
+    private int catalogSubscriptionPrice;
 
-    public Catalog(String catalogTitle, String catalogSubscriptionPrice) {
+    public Catalog(String catalogTitle, int catalogSubscriptionPrice) {
         this.catalogTitle = catalogTitle;
         this.catalogSubscriptionPrice = catalogSubscriptionPrice;
     }
@@ -19,11 +19,11 @@ public class Catalog {
         this.catalogTitle = catalogTitle;
     }
 
-    public String getCatalogSubscriptionPrice() {
+    public int getCatalogSubscriptionPrice() {
         return catalogSubscriptionPrice;
     }
 
-    public void setCatalogSubscriptionPrice(String catalogSubscriptionPrice) {
+    public void setCatalogSubscriptionPrice(int catalogSubscriptionPrice) {
         this.catalogSubscriptionPrice = catalogSubscriptionPrice;
     }
 
