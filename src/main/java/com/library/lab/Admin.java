@@ -32,6 +32,14 @@ public class Admin {
         this.catalogList = catalogList;
     }
 
+    public void printAllCatalogs() {
+        System.out.println("Админ: " + adminName + " управляет каталогами" );
+        for (Catalog catalog: catalogList) {
+            System.out.println("Админ: " + adminName + " управляет каталогами" );
+            System.out.println(catalog.getCatalogTitle() + " цена за подписку: " + catalog.getCatalogSubscriptionPrice());
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

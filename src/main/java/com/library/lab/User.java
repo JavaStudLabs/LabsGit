@@ -1,15 +1,17 @@
 package com.library.lab;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class User {
     private String userName;
     private List<Catalog> userSubscribedCatalogs;
-    private int balance;
+    private double balance;
 
     public User(String userName) {
         this.userName = userName;
+        userSubscribedCatalogs = new ArrayList<>();
     }
 
     public User(String userName, List<Catalog> userSubscribedCatalogs, int balance) {
@@ -34,11 +36,21 @@ public class User {
         this.userSubscribedCatalogs = userSubscribedCatalogs;
     }
 
-    public int getBalance() {
+    public void registerSubscription(Catalog catalog) {
+        if(balance > catalog.getCatalogSubscriptionPrice()) {
+            balance = balance - catalog.getCatalogSubscriptionPrice();
+            userSubscribedCatalogs.add(catalog);
+            System.out.println("Подписка прошла успешно!");
+        } else {
+            System.out.println("Не достаточно средств на счету! Пожалуйста пополните баланс");
+        }
+    }
+
+    public double getBalance() {
         return balance;
     }
 
-    public void setBalance(int balance) {
+    public void setBalance(double balance) {
         this.balance = balance;
     }
 
